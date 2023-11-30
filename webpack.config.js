@@ -1,22 +1,22 @@
-const {
-  sentryWebpackPlugin
-} = require("@sentry/webpack-plugin");
+const { sentryWebpackPlugin } = require("@sentry/webpack-plugin");
 
-const path = require('path');
+const path = require("path");
 
 module.exports = {
-  entry: './src/index.js',
+  entry: "./src/index.js",
 
   output: {
-    filename: 'main.js',
-    path: path.resolve(__dirname, 'dist'),
+    filename: "main.js",
+    path: path.resolve(__dirname, "dist"),
   },
 
   devtool: "source-map",
-
-  plugins: [sentryWebpackPlugin({
-    authToken: process.env.SENTRY_AUTH_TOKEN,
-    org: "rj-demo-org",
-    project: "rj-onboarding-project"
-  })]
+  mode: "production",
+  plugins: [
+    sentryWebpackPlugin({
+      authToken: process.env.SENTRY_AUTH_TOKEN,
+      org: "cstavitsky",
+      project: "chris-frontend-javascript",
+    }),
+  ],
 };
