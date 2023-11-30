@@ -9,4 +9,6 @@ function component() {
   return element;
 }
 
+mySecondUndefinedFunction();
+
 document.body.appendChild(component());
